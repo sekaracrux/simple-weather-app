@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col_centered default_bg" id="background">
+    <!-- Title -->
+    <div class="container-fluid" id="title">
+      <h1>Simple Weather App</h1>
+    </div>
+    <div class="container-fluid" id="zipcode">
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col_centered">
+        <form
+        [formGroup]="weatherSearchForm"
+        (ngSubmit)="sendToAPIXU(weatherSearchForm.value)"
+         >
+         <input
+          class="form-control zipcode_input"
+          type="text"
+          id="weatherLocation"
+          aria-describedby="weatherLocation"
+          placeholder="Please input a Location"
+          formControlName="location" />
+
+          <button id="find_button">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="container-fluid custom_scrollbar" id="weather_info">
+      <!-- Today's weather -->
+      <div class="row col-xs-12 col-sm-6 col-md-6 col-lg-6 col_centered weather_row" >
+   
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="weather_col">
+            <h2> {{ this.weatherData?.location.name }}, {{
+              this.weatherData?.location.country }}</h2>
+            <p>{{(this.weatherData?.location.localtime_epoch * 1000) | date: 'EEE, MMM d'}}</p>
+            <img src="{{this.weatherData?.current.weather_icons[0]}}" />
+            <p></p>
+            <p>{{ this.weatherData?.current?.weather_descriptions[0]}}</p>
+            <h3>{{this.weatherData?.current.temperature}}°C</h3>								
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="forecast_col">
+            <p>Wind Spped: {{this.weatherData?.current?.wind_speed }} km/hr</p>
+            <p>Wind Direction: {{ this.weatherData?.current?.wind_dir }} </p>
+            <p>Humidity: {{this.weatherData?.current?.humidity}} %</p>
+            <p>Pressure: {{this.weatherData?.current?.pressure}} MB</p>
+          </div>
+      
+      </div>
+    
+  
+      <div class="row grid" >
+        <h2 class="previous_search">Previous Searches</h2>
+        <div class="col-md-12">
+          <ag-grid-angular
+              style="width: 100%; height: 500px;"
+              class="ag-theme-balham"
+              [rowData]="rowData"
+              [columnDefs]="columnDefs">
+          </ag-grid-angular>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+ 
+       
+       
+      

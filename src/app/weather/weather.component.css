@@ -1,0 +1,87 @@
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+/******************
+------Popover------
+*******************/
+.popover {
+	border: none;
+}
+.popover-content {
+	background-color: coral;
+	color: #FFFFFF;
+	padding: 5px !important;
+}
+.arrow:after {
+	border-bottom-color: coral !important;
+}
+/***********************
+======Weather Info======
+************************/
+#weather_info {
+	height: 587px;
+	margin-top: 10px;
+	padding-top: 10px; 
+	text-align: center;
+	overflow: auto;
+}
+#weather_row .col_centered {
+	padding: 10px 10px;
+	overflow: hidden;
+	background-color: rgba(21, 12, 53, 0.75);
+	color: #fff;
+}
+
+.weather_row {
+	padding: 10px 10px;
+	overflow: hidden;
+	background-color: rgba(21, 12, 53, 0.75);
+	color: #fff;
+}
+#weather_col {
+	line-height: 5px;
+}
+#forecast_col {
+	padding: 10px 0;
+	position: relative;
+	top: 20px;
+	line-height: 20px;
+}
+#forecast .col_centered {
+	display: inline-block;
+	float: none;
+}
+.forecast_col {
+	width: 125px;
+	margin: 10px 10px;
+	padding: 10px 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	color: #fff;
+}
+.forecast_col p {
+	line-height: 12px;
+}
+/********************
+------Scrollbar------
+*********************/
+.custom_scrollbar::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+.custom_scrollbar::-webkit-scrollbar
+{
+	width: 7px;
+}
+.custom_scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 1px solid #555555;
+}
+
+.grid{
+    margin-top: 10px;
+}
+.previous_search{
+    color: #fff;
+    margin-top: 20px;
+}
